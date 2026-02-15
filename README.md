@@ -8,8 +8,10 @@ Latest Update: February 2026 (Integrated Wearable Data & Model Comparison)
 Dr. Mrs. Jacinta Chioma Odirichukwu — Project Manager & Team Leader
 
 Meruert (meruertd876) — ML Engineer (Wearable Integration & 2026 Updates)
+
 Samira Mur - 2026 updates
-Gaukhar Sanat - 2026 updates
+
+Gaukhar Samat - 2026 updates
 
 Simom Peter Chimaobi Odirichukwu — Health Data Monitoring
 
@@ -62,6 +64,7 @@ The trained Decision Tree model is saved as ovulation_model.sav for instant infe
 
 🌐 Deployment
 The final model is designed for real-time deployment using the Django framework, allowing users to input their data and receive immediate ovulation predictions via a web interface
+
 
 
 

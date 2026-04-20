@@ -1,70 +1,119 @@
-AI-Driven Menstrual Cycle & Ovulation Predictor
-📅 Project Timeline
-Start Date: August 25, 2023
+# 🌸 Pink Cycle — AI-Powered Menstrual Cycle & Ovulation Predictor
 
-Latest Update: February 2026 (Integrated Wearable Data & Model Comparison)
+A cross-platform mobile application for menstrual cycle tracking, ovulation prediction, and reproductive health monitoring — powered by machine learning and wearable data integration.
 
-👥 Project Team
-Dr. Mrs. Jacinta Chioma Odirichukwu — Project Manager & Team Leader
+## 👥 Team
 
-Meruert (meruertd876) — ML Engineer (Wearable Integration & 2026 Updates)
+| Name | Role |
+|------|------|
+| Meruert (meruertd876) |  Wearable Integration |
+| Samira Mur | 2026 Updates — ML engineer Flutter & FastAPI |
+| Gaukhar Samat | 2026 business model |
 
-Samira Mur - 2026 updates
+---
 
-Gaukhar Samat - 2026 updates
+## 🎯 Project Aim
 
-Simom Peter Chimaobi Odirichukwu — Health Data Monitoring
+Pink Cycle predicts ovulation day and cycle phases using historical biological and wearable data. The app helps women plan pregnancies, track symptoms, set health goals, and compete with friends through a gamification system.
 
-Okorie Ignatius Chukwunonyerem — Data Scientist
+---
 
-John Ugochukwu Nnoruka — Django/Python Developer
+## 📱 Mobile App — Flutter
 
-Nwanchukwu, David Chika — Data Analyst
+Built with Flutter for iOS and Android.
 
-🎯 Project Aim
-This project aims to predict the ovulation day of women using historical biological data. By leveraging Machine Learning, we provide accurate fertility insights to help women plan pregnancies and monitor reproductive health effectively.
+**Key Features:**
+- Cycle phase tracking with visual ring indicator
+- Ovulation and period day predictions
+- Symptom logging
+- AI assistant integration
+- Wearable data display (HRV, Heart Rate, Skin Temperature)
+- Gamification: goals, achievements, friend leaderboard
+- Multilingual support
 
-🚀 Key Updates (2026 Integration)
-Unlike standard calendar apps, our updated model now simulates integration with wearable devices (e.g., smartwatches) by incorporating:
+**Tech Stack:**
+- Flutter + Riverpod (state management)
+- Shared Preferences (local storage)
+- Custom theming with AppColors
 
-SkinTemp: Basal-like skin temperature tracking.
+---
 
-HRV Index: Heart Rate Variability to monitor physiological stress.
+## ⚙️ Backend — FastAPI
 
-🛠 Methodology & Tools
-📊 Data Processing
-We used a Kaggle dataset optimized through extensive Feature Engineering. Out of 80 original columns, we focused on the most predictive features: CycleNumber, LengthofCycle, Age, BMI, SkinTemp, and HRV_Index.
+REST API serving ML model predictions and user data.
 
-🤖 Machine Learning Models
-We performed a comparative analysis of multiple algorithms to find the most accurate predictor:
+**Endpoints include:**
+- `/predict/ovulation` — ovulation day prediction
+- `/predict/phase` — current cycle phase
+- `/user/cycle` — cycle history
 
-Decision Tree Regression: (Best Performance) Effectively handles non-linear biological data.
+**Tech Stack:**
+- Python + FastAPI
+- Uvicorn
+- Pydantic for data validation
 
-Random Forest Regression: Provides high stability through ensemble learning.
+---
 
-Linear Regression: Used as a baseline for performance evaluation.
+## 🤖 Machine Learning — Google Colab
 
-📈 Evaluation Metrics
-The models were evaluated using:
+Models trained on a Kaggle dataset with feature engineering.
 
-Mean Squared Error (MSE)
+**Features used:**
+`CycleNumber`, `LengthofCycle`, `Age`, `BMI`, `SkinTemp`, `HRV_Index`
 
-Root Mean Squared Error (RMSE)
+### Models
 
-R-squared (R2 Score): Our primary metric for accuracy.
+| Model | Description |
+|-------|-------------|
+| **Random Forest** | Ensemble model, high stability, main predictor |
+| **XGBoost** | Gradient boosting, handles non-linear patterns |
+| **LSTM** | Recurrent neural network for sequential cycle data |
+| **Autoencoder** | Anomaly detection in cycle patterns |
 
-💻 How to Run
-Install Dependencies:
+### Evaluation Metrics
+- MSE — Mean Squared Error
+- RMSE — Root Mean Squared Error
+- R² Score — primary accuracy metric
 
-Execute Notebook:
-Open MenstrualCyclePrediction_backup.ipynb in Jupyter or VS Code.
+### Model Artifacts
+- `ovulation_model.sav` — trained Random Forest model for inference
 
-Model Artifacts:
-The trained Decision Tree model is saved as ovulation_model.sav for instant inference.
+---
 
-🌐 Deployment
-The final model is designed for real-time deployment using the Django framework, allowing users to input their data and receive immediate ovulation predictions via a web interface
+## 🚀 How to Run
 
+### Flutter App
+```bash
+flutter pub get
+flutter run
+```
 
+### FastAPI Backend
+```bash
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
+ML Models
+Open notebooks in Google Colab:
+- `MenstrualCyclePrediction.ipynb`
 
+---
+
+## 📂 Repository Structure
+
+```
+pinkcycle/
+├── lib/                  # Flutter app source
+│   ├── features/         # Screens and widgets
+│   ├── models/           # Data models
+│   ├── repositories/     # State & business logic
+│   └── app/              # Theme, routing
+├── backend/              # FastAPI backend
+│   ├── main.py
+│   └── requirements.txt
+├── ml/                   # Google Colab notebooks
+│   ├── MenstrualCyclePrediction.ipynb
+│   └── ovulation_model.sav
+└── README.md
+```
